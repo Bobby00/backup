@@ -1,0 +1,19 @@
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+<img src="{{ object.image.url }}">
+{{ object.name }}<br>
+{{ object.size }}<br>
+{{ object.condition }}<br>
+{{ object.quality_score }}<br>
+{{ object.price }}<br>
+
+<a href="{{ object.get_add_to_cart_url }}" class="add-to-cart"> Add to cart <i class="fas fa-shopping-cart"></i></a>
+<a href="{{ object.get_remove_from_cart_url }}" class="add-to-cart"> Remove from cart <i class="fas fa-trash"></i></a>
+<br><br><br>
+

@@ -1,0 +1,159 @@
+    /*
+    Flaticon icon font: Flaticon
+    Creation date: 26/06/2018 11:07
+    */
+
+    @font-face {
+  font-family: "Flaticon";
+  src: url("./Flaticon.eot");
+  src: url("./Flaticon.eot?#iefix") format("embedded-opentype"),
+       url("./Flaticon.woff") format("woff"),
+       url("./Flaticon.ttf") format("truetype"),
+       url("./Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("./Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+    .fi:before{
+        display: inline-block;
+  font-family: "Flaticon";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+    }
+
+    .flaticon-001-flip-flops-1:before { content: "\f100"; }
+.flaticon-002-flip-flops:before { content: "\f101"; }
+.flaticon-003-shoe-3:before { content: "\f102"; }
+.flaticon-004-shoes-3:before { content: "\f103"; }
+.flaticon-005-shoes-2:before { content: "\f104"; }
+.flaticon-006-shoes-1:before { content: "\f105"; }
+.flaticon-007-ballerina:before { content: "\f106"; }
+.flaticon-008-sandals-9:before { content: "\f107"; }
+.flaticon-009-sandals-8:before { content: "\f108"; }
+.flaticon-010-sandals-7:before { content: "\f109"; }
+.flaticon-011-sandals-6:before { content: "\f10a"; }
+.flaticon-012-sandals-5:before { content: "\f10b"; }
+.flaticon-013-sandals-4:before { content: "\f10c"; }
+.flaticon-014-sandals-3:before { content: "\f10d"; }
+.flaticon-015-slippers:before { content: "\f10e"; }
+.flaticon-016-sandals-2:before { content: "\f10f"; }
+.flaticon-017-sandals-1:before { content: "\f110"; }
+.flaticon-018-high-heel-8:before { content: "\f111"; }
+.flaticon-019-shoe-2:before { content: "\f112"; }
+.flaticon-020-sandals:before { content: "\f113"; }
+.flaticon-021-high-heels:before { content: "\f114"; }
+.flaticon-022-shoes:before { content: "\f115"; }
+.flaticon-023-sneakers:before { content: "\f116"; }
+.flaticon-024-boot-19:before { content: "\f117"; }
+.flaticon-025-boot-18:before { content: "\f118"; }
+.flaticon-026-boot-17:before { content: "\f119"; }
+.flaticon-027-high-heel-7:before { content: "\f11a"; }
+.flaticon-028-high-heel-6:before { content: "\f11b"; }
+.flaticon-029-high-heel-5:before { content: "\f11c"; }
+.flaticon-030-high-heel-4:before { content: "\f11d"; }
+.flaticon-031-high-heel-3:before { content: "\f11e"; }
+.flaticon-032-high-heel-2:before { content: "\f11f"; }
+.flaticon-033-stiletto:before { content: "\f120"; }
+.flaticon-034-mule:before { content: "\f121"; }
+.flaticon-035-high-heel-1:before { content: "\f122"; }
+.flaticon-036-oxford:before { content: "\f123"; }
+.flaticon-037-boot-16:before { content: "\f124"; }
+.flaticon-038-high-heel:before { content: "\f125"; }
+.flaticon-039-boot-15:before { content: "\f126"; }
+.flaticon-040-boot-14:before { content: "\f127"; }
+.flaticon-041-boot-13:before { content: "\f128"; }
+.flaticon-042-boot-12:before { content: "\f129"; }
+.flaticon-043-boot-11:before { content: "\f12a"; }
+.flaticon-044-boot-10:before { content: "\f12b"; }
+.flaticon-045-boot-9:before { content: "\f12c"; }
+.flaticon-046-boot-8:before { content: "\f12d"; }
+.flaticon-047-boot-7:before { content: "\f12e"; }
+.flaticon-048-boot-6:before { content: "\f12f"; }
+.flaticon-049-boot-5:before { content: "\f130"; }
+.flaticon-050-boot-4:before { content: "\f131"; }
+.flaticon-051-boot-3:before { content: "\f132"; }
+.flaticon-052-boot-2:before { content: "\f133"; }
+.flaticon-053-boot-1:before { content: "\f134"; }
+.flaticon-054-boot:before { content: "\f135"; }
+.flaticon-055-sneaker:before { content: "\f136"; }
+.flaticon-056-running-shoe-1:before { content: "\f137"; }
+.flaticon-057-running-shoe:before { content: "\f138"; }
+.flaticon-058-soccer-shoe:before { content: "\f139"; }
+.flaticon-059-shoe-1:before { content: "\f13a"; }
+.flaticon-060-shoe:before { content: "\f13b"; }
+    
+    $font-Flaticon-001-flip-flops-1: "\f100";
+    $font-Flaticon-002-flip-flops: "\f101";
+    $font-Flaticon-003-shoe-3: "\f102";
+    $font-Flaticon-004-shoes-3: "\f103";
+    $font-Flaticon-005-shoes-2: "\f104";
+    $font-Flaticon-006-shoes-1: "\f105";
+    $font-Flaticon-007-ballerina: "\f106";
+    $font-Flaticon-008-sandals-9: "\f107";
+    $font-Flaticon-009-sandals-8: "\f108";
+    $font-Flaticon-010-sandals-7: "\f109";
+    $font-Flaticon-011-sandals-6: "\f10a";
+    $font-Flaticon-012-sandals-5: "\f10b";
+    $font-Flaticon-013-sandals-4: "\f10c";
+    $font-Flaticon-014-sandals-3: "\f10d";
+    $font-Flaticon-015-slippers: "\f10e";
+    $font-Flaticon-016-sandals-2: "\f10f";
+    $font-Flaticon-017-sandals-1: "\f110";
+    $font-Flaticon-018-high-heel-8: "\f111";
+    $font-Flaticon-019-shoe-2: "\f112";
+    $font-Flaticon-020-sandals: "\f113";
+    $font-Flaticon-021-high-heels: "\f114";
+    $font-Flaticon-022-shoes: "\f115";
+    $font-Flaticon-023-sneakers: "\f116";
+    $font-Flaticon-024-boot-19: "\f117";
+    $font-Flaticon-025-boot-18: "\f118";
+    $font-Flaticon-026-boot-17: "\f119";
+    $font-Flaticon-027-high-heel-7: "\f11a";
+    $font-Flaticon-028-high-heel-6: "\f11b";
+    $font-Flaticon-029-high-heel-5: "\f11c";
+    $font-Flaticon-030-high-heel-4: "\f11d";
+    $font-Flaticon-031-high-heel-3: "\f11e";
+    $font-Flaticon-032-high-heel-2: "\f11f";
+    $font-Flaticon-033-stiletto: "\f120";
+    $font-Flaticon-034-mule: "\f121";
+    $font-Flaticon-035-high-heel-1: "\f122";
+    $font-Flaticon-036-oxford: "\f123";
+    $font-Flaticon-037-boot-16: "\f124";
+    $font-Flaticon-038-high-heel: "\f125";
+    $font-Flaticon-039-boot-15: "\f126";
+    $font-Flaticon-040-boot-14: "\f127";
+    $font-Flaticon-041-boot-13: "\f128";
+    $font-Flaticon-042-boot-12: "\f129";
+    $font-Flaticon-043-boot-11: "\f12a";
+    $font-Flaticon-044-boot-10: "\f12b";
+    $font-Flaticon-045-boot-9: "\f12c";
+    $font-Flaticon-046-boot-8: "\f12d";
+    $font-Flaticon-047-boot-7: "\f12e";
+    $font-Flaticon-048-boot-6: "\f12f";
+    $font-Flaticon-049-boot-5: "\f130";
+    $font-Flaticon-050-boot-4: "\f131";
+    $font-Flaticon-051-boot-3: "\f132";
+    $font-Flaticon-052-boot-2: "\f133";
+    $font-Flaticon-053-boot-1: "\f134";
+    $font-Flaticon-054-boot: "\f135";
+    $font-Flaticon-055-sneaker: "\f136";
+    $font-Flaticon-056-running-shoe-1: "\f137";
+    $font-Flaticon-057-running-shoe: "\f138";
+    $font-Flaticon-058-soccer-shoe: "\f139";
+    $font-Flaticon-059-shoe-1: "\f13a";
+    $font-Flaticon-060-shoe: "\f13b";

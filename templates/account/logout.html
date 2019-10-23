@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% load i18n %}
+
+{% block head_title %}{% trans "Sign Out" %}{% endblock %}
+
+{% block content_logout %}
+
+<!-- fixed column  -->
+<div class="fixed-column">
+    <div class="column-image fl-wrap full-height">
+        <div class="bg" data-bg="{% static 'images/bg/long/1.jpg' %}"></div>
+        <div class="overlay"></div>
+    </div>
+    <div class="bg-title alt"><span>Log Out</span></div>
+    <div class="progress-bar-wrap">
+        <div class="progress-bar"></div>
+    </div>
+</div>
+<!-- fixed column  end -->
+
+<!-- column-wrap  -->
+<div class="column-wrap scroll-content">
+    <!--=============== content ===============-->  
+    <!-- content   -->               
+    <div  class="content">
+        <!-- section-->
+        <section  data-scrollax-parent="true" class="dec-sec">
+            <div class="container">
+                
+                <div class="fl-wrap">
+                    <!-- contact info -->
+                <div class="container">
+                    <div class="form_border">
+
+                    <div class="section-title">
+                        <span style="color: green;" class="fas fa-user-circle fa-5x"></span>
+                    <h2 style="text-align: center; color: #FD6A06; margin-bottom: 10%;" class="bold-title">Log Out</h2>
+                    <center>
+                    <p style="float: none; text-align: center; font-size: 25px;">Are you sure you want to log out?</p>
+                    </center>
+                    <div class="fl-wrap">
+                    </div>
+                        <!-- contact form -->
+
+						<form method="post" action="{% url 'account_logout' %}">
+						  {% csrf_token %}
+						  {% if redirect_field_value %}
+						  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+						  {% endif %}
+						  <button class="secondary_btn" type="submit">{% trans 'Log Out' %}</button>
+						</form>
+                    </div>
+                </div>
+                </div>
+
+                </div>
+            </div>
+            <div class="parallax-title right-pos" data-scrollax="properties: { translateY: '-350px' }">  Log Out</div>
+        </section>
+        <!-- section end -->
+        <!--  to top  -->  
+        <div class="small-sec fl-wrap">
+            <div class="to-top-wrap"><a class="to-top" href="#"> <i class="fa fa-angle-double-up"></i> Back to Top</a></div>
+        </div>
+        <!-- to top end--> 
+    </div>
+    <!-- content end -->
+</div>
+<!-- column-wrap end -->
+
+
+{% endblock content_logout %}

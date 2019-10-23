@@ -1,0 +1,150 @@
+
+{% extends 'base.html' %}
+
+{% block title %}Shoes - A list of shoes available at Njumu{% endblock title %}
+
+<!-- {{ object_list }} -->
+{% load static %}
+
+
+{% block content_shoe-list %}
+
+
+            <!-- fixed column  -->
+            <div style="background: #262626;" class="fixed-column">
+                <div class="column-image fl-wrap full-height">
+
+                    <!-- CART OVERIVIEW FROM SHOE DISPLAY PAGE -->
+                    <div class="bg dark-background">
+                        <div class="cart-overview-styl">
+                            <span class="fas fa-adjust cart-styling"></span><br><br>
+                            <span class="overview_header">FILTERS</span><br><br>
+                            <div class="row">
+                                
+                            </div><br>
+                            <div class="row">
+                                <span style="color: white;">3 </span><span style="color: white;">X</span>
+                                <span style="color: white;" class="col-md-3">Adidas</span>
+                                <span style="color: white;">2000</span>
+                            </div><br>
+                            <div class="row">
+                                <span style="color: white;">1 </span><span style="color: white;">X</span>
+                                <span style="color: white;" class="col-md-3">Balenci..</span>
+                                <span style="color: white;">2000</span>
+                            </div><br>
+                            <div class="row">
+                                <span style="color: white;">1 </span><span style="color: white;">X</span>
+                                <span style="color: white;" class="col-md-3">Balenci..</span>
+                                <span style="color: white;">2000</span>
+                            </div><br>
+                            <div class="row">
+                                <span class="total_txt" style="color: white;">TOTAL : </span>
+                                <span class="total_num" style="color: white;">Ksh 6000</span>
+                            </div><br><br>
+                            <!-- <a class="overview_cart-btn">VIEW CART</a> -->
+                        </div>
+                    </div>
+
+
+                    <div class="overlay"></div>
+                </div>
+                <div class="bg-title alt"><!-- <span>Portfolio</span> --></div>
+                <div class="progress-bar-wrap">
+                    <div class="progress-bar"></div>
+                </div>
+            </div>
+            <!-- fixed column  end -->
+            <!-- column-wrap  -->
+            <div class="column-wrap scroll-content">
+                <!--=============== content ===============-->	
+                <!-- content   -->               
+                <div  class="content">
+                    <!-- section-->
+                    <section  data-scrollax-parent="true" class="dec-sec">
+                        <div class="container">
+                            <div class="section-title">
+                                <h2>SHOES AVAILABLE </h2>
+                                <p>Go through our shoes below and look for a  fit for you. We have different shoes available from some of the most recognized shoe brands</p>
+                                <div class="clearfix"></div>
+                                <span class="bold-separator"></span>
+                            </div>
+                            <div class="filter-wrap fl-wrap inline-filter">
+                                <div class="filter-button" style="display:none">Filter</div>
+                                <div class="gallery-filters">
+                                    <a href="#" class="gallery-filter gallery-filter-active" data-filter="*">ALL</a>
+                                    <a href="#" class="gallery-filter" data-filter=".heels">HEELS</a>
+                                    <a href="#" class="gallery-filter" data-filter=".sneakers">SNEAKERS</a>
+                                    <a href="#" class="gallery-filter" data-filter=".boots">BOOTS</a>
+                                    <a href="#" class="gallery-filter" data-filter=".officials">OFFICIAL</a>
+                                    <a href="#" class="gallery-filter" data-filter=".sandals">CROCS & SANDALS</a>
+                                    <a href="#" class="gallery-filter" data-filter=".sports">SPORTS</a>
+                                </div>
+
+                                <!-- can be used to give count of a specific shoe category against all shoes available
+                                <div class="folio-counter">
+                                    <div class="num-album"></div>
+                                    <div class="all-album"></div>
+                                </div> -->
+                            </div>
+
+
+                            <!-- product list modal START -->
+                            {% include 'base/product_modal.html' %}
+                            <!-- product list END-->
+
+
+                            <!-- product list start -->
+                            <div class="gallery-items spad">
+								{% for item in object_list %}
+								<!-- product-item-->
+								<div class="gallery-item heels branding officials">
+								    <div class="grid-item-holder">
+								        <figure class="snip1249">
+								              <div class="image">
+								                <img class="img-stylng" src="{{ obj.image.url }}" alt="sample90"/><i class="far fa-heart"></i>
+								              </div>
+								              <figcaption>
+												    <a href="{{ item.get_absolute_url }}">
+												    	<h3 class="shoe-name">{{ item.name }}</h3>
+												    </a>
+												    <p class="shoe-details">Shoe size: <span class="shoe-size"> {{ item.size }}</span></p>
+												    
+												    <p class="shoe-details">Condition: <span class="shoe-condition"> {{ item.condition }}</span></p>
+												    
+												    <p class="shoe-details">Quality Score: <span class="quality-score">{{ item.quality_score }}%</span> <span class="tooltip far fa-question-circle qs_detail"><span class="tooltiptext">Find out more</span></span></p>
+
+                                                    <p class="timestamp_cstm">Date Added : {{ item.timestamp }}</p>
+												    
+												    <div class="price">
+												      <s class="initial-price">KES {{ item.price }}</s><span class="currency">KES</span> <span class="shoe-price">{{ item.discount_price }}</span>
+												    </div>
+
+												    <!-- 
+									`					Classes to use when buiding a modal popup
+												    	data-izimodal-open="#modal" data-izimodal-transitionin="fadeInDown" 
+												    -->
+												    <a href="#0" onclick="document.getElementById('product-{{ item.id }}').style.display='block'" class="add-to-cart"> <span class="fas fa-search"></span> QUICK VIEW</a>
+												  </figcaption>
+								        </figure>
+								    </div>
+								</div>
+								<!-- product-item end-->
+								{% endfor %}				
+                            </div>
+                            <!-- product list end -->
+                        </div>
+                        <div class="clearfix"></div>
+                        
+                        <div class="parallax-title right-pos filt-text" data-scrollax="properties: { translateY: '-350px' }"> </div>
+                    </section>
+                    <!-- section end -->
+                    <!--to top  -->  
+                    <div class="small-sec fl-wrap">
+                        <div class="to-top-wrap"><a class="to-top" href="#"> <i class="fa fa-angle-double-up"></i> Back to Top</a></div>
+                    </div>
+                    <!--to top end--> 
+                </div>
+                <!-- content end -->
+            </div>
+            <!-- column-wrap end -->
+{% endblock content_shoe-list %}

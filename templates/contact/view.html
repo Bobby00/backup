@@ -1,0 +1,124 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Contact Us - Reach us today id you have any inquiries {% endblock title %}
+
+
+{% block content_contact-page %}
+<!-- fixed column  -->
+<div class="fixed-column">
+    <div class="column-image fl-wrap full-height">
+        <div class="bg" style="opacity: 0.1;" data-bg="{% static 'images/njumu-bg/header-about.png' %}"></div>
+        <div class="overlay"></div>
+    </div>
+    <div class="bg-title alt"><span>Contacts</span></div>
+    <div class="progress-bar-wrap">
+        <div class="progress-bar"></div>
+    </div>
+</div>
+<!-- fixed column  end -->
+<!-- column-wrap  -->
+<div class="column-wrap scroll-content">
+    <!--=============== content ===============-->	
+    <!-- content   -->               
+    <div  class="content">
+        <!-- section-->
+        <section  data-scrollax-parent="true" class="dec-sec">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Our Contacts </h2>
+                    <p>Do you have questions? Or would you like to order for a specific shoe? Reach us today, we really look forward to communicate with you. </p>
+                    <div class="clearfix"></div>
+                    <span class="bold-separator"></span>
+                </div>
+                <div class="fl-wrap">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="contact-info">
+                                <h4>Email us Today!</h4>
+                                <h3>You can write us on this E-mail Address</h3>
+                                <a href="mailto:njumuwear@gmail.com">njumuwear@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="contact-info">
+                                <h4>Call us Today! </h4>
+                                <h3>Our mobile phone numbers</h3>
+                                <a href="tel:+254 702 815 302">+254 702 815 302</a>
+                            </div>
+                        </div>
+                        <!-- <div class="col-md-6">
+                            <div class="contact-info">
+                                <h4>Vis</h4>
+                                <h3>My office located In  </h3>
+                                <a href="#"> 27th Brooklyn New York, NY 10065</a>
+                            </div>
+                        </div> -->
+                        <div class="col-md-6">
+                            <div class="contact-social">
+                                <ul >
+                                    <li><a href="#" target="_blank" ><i class="fab fa-facebook social-icons"></i></a></li>
+                                    <li><a href="#" target="_blank"><i class="fab fa-twitter social-icons"></i></a></li>
+                                    <li><a href="#" target="_blank" ><i class="fab fa-instagram social-icons"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="map-box box-map">
+                        <div  id="map-canvas"></div>
+                    </div> -->
+                    <section></section>
+
+                    <!-- contact info -->
+                    <div class="section-title">
+                    <h2 class="bold-title">Get in Touch</h2>
+                    <p>We value your feedback and reply within minutes.</p>
+                    <div class="fl-wrap">
+                    </div>
+                        <!-- contact form -->
+                        <div id="contact-form">
+                            <div id="message"></div>
+
+                            <form method="post">{% csrf_token %}
+                                {{ form }}
+                                <button type="submit" id="submit" class="contact_form-btn">SEND MESSAGE <span class="far fa-paper-plane"></span></button>
+                            </form>
+
+                            <br><br><br><br><br>
+
+                            <form method="post">{% csrf_token %}
+                                <div class="input-wrap"><i class="fa fa-user-plus" aria-hidden="true"></i>
+                                    <input name="name" type="text" id="name"  class="inputForm2" placeholder="Name" onClick="this.select()" >
+                                </div>
+                                
+                                <div class="input-wrap"><i class="fa fa-envelope" aria-hidden="true"></i>
+                                    <input name="email" type="text" id="email" onClick="this.select()" placeholder="E-mail" >
+                                </div>
+
+                                <div class="input-wrap"><i class="fa fa-phone" aria-hidden="true"></i>
+                                    <input name="phone_no" type="text" id="phone_no" onClick="this.select()" placeholder="Phone Number" >
+                                </div>
+
+                                <textarea name="message" id="message" onClick="this.select()" placeholder="Your message..."></textarea>
+                               
+                                <button type="submit" id="submit" class="contact_form-btn">SEND MESSAGE <span class="far fa-paper-plane"></span></button> 
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="parallax-title right-pos" data-scrollax="properties: { translateY: '-350px' }">  Contacts</div>
+        </section>
+        <!-- section end -->
+        <!--  to top  -->  
+        <div class="small-sec fl-wrap">
+            <div class="to-top-wrap"><a class="to-top" href="#"> <i class="fa fa-angle-double-up"></i> Back to Top</a></div>
+        </div>
+        <!-- to top end--> 
+    </div>
+    <!-- content end -->
+</div>
+<!-- column-wrap end -->
+{% endblock content_contact-page %}

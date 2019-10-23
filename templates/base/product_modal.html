@@ -1,0 +1,46 @@
+{% for item in object_list %}              
+ <div id="product-{{ item.id }}" class="w3-modal">
+    <div class="w3-modal-content w3-animate-top w3-card-4">
+      <header class="w3-container header-bg_clr"> 
+        <span style="font-size: 35px; padding-right: 15px; margin-bottom: 20px;" onclick="document.getElementById('product-{{ item.id }}').style.display='none'" 
+        class="w3-display-topright">&times;</span>
+        <h3>Njumu Quick View</h3>
+      </header>
+      <!-- Modal content -->
+<div class="container">
+    <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-6 col-md-6 col-lg-6">
+              <div class="fotorama" data-nav="thumbs">
+                <a href="1.jpg"><img src="{{ obj.image.url }}" width="144" height="96"></a>
+                <a href="2.jpg"><img src="{{ obj.image.url }}" width="144" height="96"></a>
+                <a href="2.jpg"><img src="{{ obj.image.url }}" width="144" height="96"></a>
+              </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6 col-md-6 col-lg-6">
+              
+                <h3 class="shoe-name-modal">{{ item.name }}</h3>
+                <p class="shoe-details-modal">Price: <span class="shoe-price shoe-price-modal">ksh. {{ item.price }}</span></p>
+
+                <p class="shoe-details-modal">Size: <span class="shoe-size"> {{ item.size }}</span></p>
+                
+                <p class="shoe-details-modal">Condition: <span class="shoe-condition"> {{ item.condition }}</span></p>
+                
+                <p class="shoe-details-modal">Quality Score: <span class="quality-score">{{ item.quality_score }}%</span> <span class="tooltip far fa-question-circle qs_detail"><span class="tooltiptext">Find out more</span></span></p>
+                <p class="timestamp_cstm">Added : {{ item.timestamp }}</p>
+                <a href="{{ object.get_add_to_cart_url }}" class="add-to-cart"> Add to cart <i class="fas fa-shopping-cart"></i></a>
+                <!-- <div class="price">
+                  <s class="initial-price">KES 2,000</s><span class="currency">KES</span> <span class="shoe-price">1,600</span>
+                </div> -->
+              
+            </div>
+    </div>
+</div>
+  <footer class="w3-container modal-footer_bg_clr">
+  <p><span style="font-size: 25px!important;">*</span>Images displayed above are of the shoe itself</p>
+  </footer>
+</div>
+</div>
+{% endfor %}
+
+<!-- Modal content -->

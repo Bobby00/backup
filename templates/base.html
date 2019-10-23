@@ -1,13 +1,92 @@
-<!DOCTYPE html>
+{% load static %}
+
+<!DOCTYPE HTML>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    {% block content  %}
-    {% endblock content %}
-</body>
+    <head>
+        <!--=============== basic  ===============-->
+        <meta charset="UTF-8">
+        <title>{% block title %}Njumu - A whole new experience in shopping for shoes{% endblock title %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta name="robots" content="index, follow"/>
+        <meta name="keywords" content="shoes, affordable shoes, quality shoes, mtumba, kiatu, njumu, shoes in kenya"/>
+        <meta name="description" content="An E-commerce platform that offers a whole new experience in shopping for shoes"/>
+        <!--=============== css  ===============-->
+        {% include 'base/css.html' %}
+
+        <!--=============== favicons ===============-->
+        <link rel="shortcut icon" href="{% static 'images/njumu-logo/njumu-logo1.png' %}">
+    </head>
+
+    <body>
+        <!--================= loader ================-->
+        <div class="loader-holder">
+            <div class="loader-inner loader-vis">
+                <div class="loader"></div>
+            </div>
+        </div>
+        <!--================= loader end ================-->
+        <!--================= main start ================-->
+        <div id="main">
+            {% include 'base/navbar.html' %}
+
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            
+
+            {% block content_home-page %}  {% endblock content_home-page %}
+
+            {% block content_about-page %}  {% endblock content_about-page %}
+
+            {% block content_checkout-page %}  {% endblock content_checkout-page %}
+
+            {% block content_contact-page %}  {% endblock content_contact-page %}
+
+            {% block content_shoe-list %}  {% endblock content_shoe-list %}
+
+            {% block content_cart-view %}  {% endblock content_cart-view %}
+
+            {% block content_login-view %}  {% endblock content_login-view %}
+
+            {% block content_register-view %}  {% endblock content_register-view %}
+
+            {% block content_logout %}  {% endblock content_logout %}
+
+            {% block content_checkout-view %}  {% endblock content_checkout-view %}
+
+            {% block extra_body %}  {% endblock %}
+
+           
+            <!-- footer-->
+            <footer class="main-footer">
+                <a href="contact.html" class="mail-link"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+                <a href="contact.html" class="call-link"><i class="fa fa-phone" aria-hidden="true"></i></a>
+
+                <!-- header-social-->
+                <div class="footer-social">
+                    <ul >
+                        <li><a href="#" target="_blank" ><i class="fab fa-facebook social-icons"></i></a></li>
+                        <li><a href="#" target="_blank"><i class="fab fa-twitter social-icons"></i></a></li>
+                        <li><a href="#" target="_blank" ><i class="fab fa-instagram social-icons"></i></a></li>
+                        <!-- <li><a href="#" target="_blank" ><i class="fab fa-pinterest"></i></a></li>
+                        <li><a href="#" target="_blank" ><i class="fab fa-tumblr"></i></a></li> -->
+                    </ul>
+                </div>
+                <!-- header-social end-->
+                <div class="copyright">&#169; Njumu 2019 .  All rights reserved.</div>
+            </footer>
+            <!-- footer end -->
+            <!-- Share container  -->
+            <div class="share-container  isShare"  data-share="['facebook','pinterest','googleplus','twitter','linkedin']"></div>
+            <!-- Share container  end-->
+        </div>
+
+        <!-- Main end -->
+        <!--=============== scripts  ===============-->
+        {% include 'base/js.html' %}
+    </body>
 </html>

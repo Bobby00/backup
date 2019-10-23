@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Here is the list of shoes</h2>
+
+{% for item in items %}
+	{{ item.name }}<br>
+	{{ item.price }}<br>
+	{{ item.condition }}<br>
+	{{ item.quality_score }}<br>
+	{{ item.timestamp }}<br>
+{% endfor %}
+
+{% endblock content %}

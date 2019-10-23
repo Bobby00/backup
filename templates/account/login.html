@@ -1,0 +1,130 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+{% load account socialaccount %}
+{% load static %}
+
+{% block title %}Log in - Log in to continue your shopping experience with us. {% endblock title %}
+
+{% block content_login-view %}
+
+<style type="text/css">
+    .login_form_styl {
+        float: none;
+        max-width: none;
+        width: 60%;
+    }
+</style>
+
+<!-- fixed column  -->
+<div class="fixed-column">
+    <div class="column-image fl-wrap full-height">
+        <div class="bg" data-bg="{% static 'images/bg/long/1.jpg' %}"></div>
+        <div class="overlay"></div>
+    </div>
+    <div class="bg-title alt"><span>Log In</span></div>
+    <div class="progress-bar-wrap">
+        <div class="progress-bar"></div>
+    </div>
+</div>
+<!-- fixed column  end -->
+
+<!-- column-wrap  -->
+<div class="column-wrap scroll-content">
+    <!--=============== content ===============-->  
+    <!-- content   -->               
+    <div  class="content">
+        <!-- section-->
+        <section  data-scrollax-parent="true" class="dec-sec">
+            <div class="container">
+                
+                <div class="fl-wrap">
+                    <!-- contact info -->
+                <div class="container">
+                    <div class="form_border">
+
+                    <div class="section-title">
+                        <span style="color: green;" class="fas fa-user-circle fa-5x"></span>
+                    <h2 style="text-align: center; color: #FD6A06;" class="bold-title">Log In</h2>
+                    <center>
+                    <p style="float: none; text-align: center;">Log in to your account to continue your njumu shopping experience.</p>
+                    </center>
+                    <div class="fl-wrap">
+                    </div>
+                        <!-- contact form -->
+                        <center>
+                        <div class="login_form_styl" id="contact-form">
+                            <div id="message"></div>
+
+                            <form class="login" method="POST" action="{% url 'account_login' %}">
+                              {% csrf_token %}
+                                
+                                {{ form }}
+                                {% if redirect_field_value %}
+                                  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                                {% endif %}
+                                <br>
+                                <button style="padding:20px 40px!important;" type="submit" id="submit" class="contact_form-btn"><span style="font-size: 27px; font-weight: 900; letter-spacing: 1.5px;">LOG IN </span><span style="font-size: 23px;" class="fas fa-arrow-right"></span></button>
+                                
+                                <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
+                            </form>
+
+                            {% get_providers as socialaccount_providers %}
+
+                            {% if socialaccount_providers %}
+                            <p>{% blocktrans with site.name as site_name %}Please sign in with one
+                            of your existing third party accounts. Or, <a href="{{ signup_url }}">sign up</a>
+                            for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
+
+                            <div class="socialaccount_ballot">
+
+                              <ul class="socialaccount_providers">
+                                {% include "socialaccount/snippets/provider_list.html" with process="login" %}
+                              </ul>
+
+                              <div class="login-or">{% trans 'or' %}</div>
+
+                            </div>
+
+                            {% include "socialaccount/snippets/login_extra.html" %}
+
+                            {% else %}
+                            <br><br>
+                            <p style="float: none; text-align: center;">Don't have an account? <a style="text-decoration: underline; color: blue;" href="{% url 'account_signup' %}">Register Here</a></p>
+                            {% endif %}
+
+                            <!-- <form method="post">
+                                <div class="input-wrap"><i class="fa fa-user-plus" aria-hidden="true"></i>
+                                    <input name="name" type="text" id="name"  class="inputForm2" placeholder="Name" onClick="this.select()" >
+                                </div>
+                                
+                                <div class="input-wrap"><i class="fas fa-key" aria-hidden="true"></i>
+                                    <input name="password" type="text" id="email" onClick="this.select()" placeholder="Password" >
+                                </div>
+                               
+                                <button style="padding:20px 40px!important;" type="submit" id="submit" class="contact_form-btn"><span style="font-size: 27px; font-weight: 900; letter-spacing: 1.5px;">LOG IN </span><span style="font-size: 23px;" class="fas fa-arrow-right"></span></button> 
+
+                            </form> -->
+                        </div>
+                        </center>
+                    </div>
+                </div>
+                </div>
+
+                </div>
+            </div>
+            <div class="parallax-title right-pos" data-scrollax="properties: { translateY: '-350px' }">  Log In</div>
+        </section>
+        <!-- section end -->
+        <!--  to top  -->  
+        <div class="small-sec fl-wrap">
+            <div class="to-top-wrap"><a class="to-top" href="#"> <i class="fa fa-angle-double-up"></i> Back to Top</a></div>
+        </div>
+        <!-- to top end--> 
+    </div>
+    <!-- content end -->
+</div>
+<!-- column-wrap end -->
+
+{% endblock %}
+

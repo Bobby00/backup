@@ -1,0 +1,158 @@
+{% extends 'base.html' %}
+
+{% block title %}Cart - An Overview of your order{% endblock title %}
+
+<!-- {{ object_list }} -->
+{% load static %}
+
+
+            {% block content_cart-view %}
+
+            <style type="text/css">
+                table {
+                      border-collapse: collapse;
+                      width: 100%;
+                    }
+
+                    th {
+                        text-transform: uppercase;
+                        font-size: 18px;
+                        font-weight: 600;
+                        text-align: center;
+
+                    }
+                    td {
+                        font-size: 16px;
+                        text-align: center;
+                    }
+
+                    td, th {
+                      border-top: 1px solid #dddddd;
+                      border-bottom: 1px solid #dddddd;
+                      text-align: center;
+                      padding: 8px;
+                    }
+
+                    tr:nth-child(even) {
+                      background-color:;
+                    }
+            </style>  
+
+            <!-- fixed column  -->
+            <div class="fixed-column">
+                <div class="column-image fl-wrap full-height">
+                    <div class="bg bg-scroll" ></div>
+                    <div class="overlay"></div>
+                </div>
+                <div class="bg-title alt"><span></span></div>
+                <div class="progress-bar-wrap">
+                    <div class="progress-bar"></div>
+                </div>
+            </div>
+            <!-- fixed column  end -->
+            <!-- column-wrap  -->
+            <div class="column-wrap scroll-content">
+                <!--=============== content ===============-->
+                <!-- scroll page navigation -->
+                <div class="scroll-nav-holder fl-wrap">
+                    <nav class="scroll-nav fl-wrap">
+                        <ul>
+                            <a class="scroll-link" href="#sec4" data-bgscr="{% static 'images/bg/long/1.jpg' %}" data-bgtex="your_cart"></a>
+                        </ul>
+                    </nav>
+                </div>
+                <!-- scroll page navigation end -->
+                <!-- content   -->
+                <div class="content">
+                    
+                    <!-- section end -->
+                    <section data-scrollax-parent="true"  id="sec4" class="scroll-con-sec dec-sec">
+                        <div class="container">
+
+                            <div class="section-title">
+                                <h2>MY CART</h2>
+                                <p>Summary of your order and total costs.</p>
+                                <div class="clearfix"></div>
+                                <span class="bold-separator"></span>
+                            </div>
+                            
+
+                            <div class="row">
+                        
+                                <table>
+                                
+                                {% if object.items.exists %}
+								  <tr>
+								  	<th></th>
+                                    <th></th>
+								    <th>Product</th>
+								    <th>Size</th>
+								    <th>Quantity</th>
+								    <th>Total (Ksh)</th>
+								  </tr>
+                                  {% endif %}
+                                  {% for order_item in object.items.all %}  
+								  <tr>
+                                    <td>{{ forloop.counter }}.</td>
+								  	<th style="width: 25%;"><img style="width: 50%;" src="{{ product.image.url }}"></th>
+								    <td><a href="{{ order_item.item.get_absolute_url }}">{{ order_item.item.name }}</a> </td>
+
+								    <td>{{ order_item.item.size }}</td>
+								    <td><a href="{% url 'core:remove-single-item-from-cart' order_item.item.slug %}"><i class="fas fa-minus-circle"></i></a>
+                                         {{ order_item.quantity }} 
+                                        <a href="{% url 'core:add-to-cart' order_item.item.slug %}"><i class="fas fa-plus-circle"></i></td></a>
+
+								    <td><b>{{ order_item.get_final_price }}</b></td>
+                                    <td><a href="{% url 'core:remove-from-cart' order_item.item.slug %}"><i class="far fa-trash-alt"></i></a></td>   
+								  </tr>
+
+                                  {% empty %}
+                                
+                                        <h2 class="mb--3">Your cart is empty</h2>
+                                        <hr>
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <a href="/products/" class="secondary_btn"><i class="fas fa-arrow-left"></i> CONTINUE SHOPPING</a>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                
+                                            </div>
+                                        </div>
+                                    
+                                        
+
+
+                                  {% endfor %}
+								</table>
+
+                                {% if object.get_total %}
+                        <div class="container">
+								<p class="text-right">Sub total:<a style="text-align: right; font-size: 18px; font-weight: 700;"> {{ object.get_sub_total }}</a></p>
+								<p class="text-right">Total:<a style="text-align: right; font-size: 18px; font-weight: 700;"> {{ object.get_total }}</a></p>
+                            <div class="row">
+                                <div class="col-sm-6">
+								    <a href="/products/" class="secondary_btn"><i class="fas fa-arrow-left"></i> CONTINUE SHOPPING</a>
+                                </div>
+                                <div class="col-sm-6">
+                                    <a href="/checkout/" class="tertiary_btn">PROCEED TO CHECKOUT <i class="fas fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                                {% endif %}
+                            </div>
+                    <!--  to top  -->
+                    <div class="small-sec fl-wrap">
+                        <div class="to-top-wrap"><a class="to-top" href="#"> <i class="fa fa-angle-double-up"></i> Back to Top</a></div>
+                    </div>
+                    <!-- to top end-->
+                </div>
+                <!-- content end -->
+            </div>
+            <!-- column-wrap end -->
+            <!-- arrow nav -->
+            <div class="arrowpagenav"></div>
+            <!-- arrow nav end-->
+
+            {% endblock content_cart-view %}
+
+            

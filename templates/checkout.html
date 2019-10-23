@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}Checkout - Just a few more details and we are done{% endblock title %}
+
+{% block content_checkout-page %}
+
+<!-- fixed column  -->
+<div class="fixed-column">
+    <div class="column-image fl-wrap full-height">
+        <div class="bg" style="opacity: 0.2;" data-bg="{% static 'images/njumu-bg/header-about.png' %}"></div>
+        <div class="overlay"></div>
+    </div>
+    <div class="bg-title alt"><span></span></div>
+    <div class="progress-bar-wrap">
+        <div class="progress-bar"></div>
+    </div>
+</div>
+<!-- fixed column  end -->
+<!-- column-wrap  -->
+<div class="column-wrap scroll-content">
+    <!--=============== content ===============-->
+    <!-- scroll page navigation -->
+    <div class="scroll-nav-holder fl-wrap">
+        <nav class="scroll-nav fl-wrap">
+            <ul>
+                <a class="" href="#sec4" data-bgscr="images/bg/long/1.jpg" data-bgtex="checkout"></a>
+            </ul>
+        </nav>
+    </div>
+    <!-- scroll page navigation end -->
+    <!-- content   -->
+    <div class="content">
+        
+        <!-- section end -->
+        <section data-scrollax-parent="true"  id="sec4" class="scroll-con-sec dec-sec">
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>OUR STORY</h2>
+                    <p>A short story about how and why Njumu was started.</p>
+                    <div class="clearfix"></div>
+                    <span class="bold-separator"></span>
+                </div>
+
+                <div class="row">
+                    <center>
+                    <div class="njumu_story">
+                        <h5>The idea behind Njumu started sometime last year, we were invited to a rather official meeting and one of the requirements was we all had to show up looking sharp. At the moment, most of us didn't own a decent pair of official shoes.<br> So we set out to look for a pair or two. It was an uphill task, we had to go through a series of shops trting to bargain the overpriced offers we were getting. That's when we got the idea of founding NJUMU, a one stop platform to get affordable NEW & MTUMBA shoes without compromising on quality.</h5>
+                    </div>
+                    </center>
+                    <a href="#sec5" class="secondary_btn">EXPLORE BENEFITS WE OFFER</a>
+
+                </div>
+
+
+            </div>
+            <div class="parallax-title right-pos" data-scrollax="properties: { translateY: '-350px' }">OUR STORY</div>
+        </section>
+        <!-- section end -->
+
+
+        <!-- section facts -->
+        
+
+        <!--  to top  -->
+        <div class="small-sec fl-wrap">
+            <div class="to-top-wrap"><a class="to-top" href="#"> <i class="fa fa-angle-double-up"></i> Back to Top</a></div>
+        </div>
+        <!-- to top end-->
+    </div>
+    <!-- content end -->
+</div>
+<!-- column-wrap end -->
+<!-- arrow nav -->
+<div class="arrowpagenav"></div>
+<!-- arrow nav end-->
+{% endblock content_checkout-page %}

@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+{% load static %}
+
+{% block title %}Sign Up - Enter your details to join the Njumu Community. {% endblock title %}
+
+{% block content_register-view %}
+<!-- fixed column  -->
+<div class="fixed-column">
+    <div class="column-image fl-wrap full-height">
+        <div class="bg" data-bg="{% static 'images/bg/long/1.jpg' %}"></div>
+        <div class="overlay"></div>
+    </div>
+    <div class="bg-title alt"><span>SIGN UP</span></div>
+    <div class="progress-bar-wrap">
+        <div class="progress-bar"></div>
+    </div>
+</div>
+<!-- fixed column  end -->
+
+<!-- column-wrap  -->
+<div class="column-wrap scroll-content">
+    <!--=============== content ===============-->  
+    <!-- content   -->               
+    <div  class="content">
+        <!-- section-->
+        <section  data-scrollax-parent="true" class="dec-sec">
+            <div class="container">
+                
+                <div class="fl-wrap">
+                    <!-- contact info -->
+                <div class="container">
+                    <div class="form_border">
+
+                    <div class="section-title">
+                        <span style="color: green;" class="fas fa-user-circle fa-5x"></span>
+                    <h2 style="text-align: center; color: #FD6A06;" class="bold-title">Create Account</h2>
+                    <center>
+                    <p style="float: none; text-align: center;">Fill in your details below to create an account.</p>
+                    </center>
+                    <div class="fl-wrap">
+                    </div>
+                        <!-- contact form -->
+                        <center>
+                        <div style="float: none; max-width: none; width: 60%;" id="contact-form">
+                            <div id="message"></div>
+
+                            <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
+                            	{% csrf_token %}
+                                {{ form }}
+                                {% if redirect_field_value %}
+								  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+								{% endif %}
+                                <button style="padding:20px 40px!important;" type="submit" id="submit" class="contact_form-btn"><span style="font-size: 27px; font-weight: 900; letter-spacing: 1.5px;">SUBMIT </span><span style="font-size: 23px;" class="fas fa-arrow-right"></span></button> 
+                            </form>
+
+                            <!-- <form method="post">
+                                <div class="input-wrap"><i class="fa fa-user-plus" aria-hidden="true"></i>
+                                    <input name="name" type="text" id="name"  class="inputForm2" placeholder="Name" onClick="this.select()" >
+                                </div>
+                                <div class="input-wrap"><i class="fas fa-envelope" aria-hidden="true"></i>
+                                    <input name="email" type="text" id="email"  class="inputForm2" placeholder="Email" onClick="this.select()" >
+                                </div>
+                                <div class="input-wrap"><i class="fas fa-phone" aria-hidden="true"></i>
+                                    <input name="phoneno" type="text" id="name"  class="inputForm2" placeholder="Phone Number" onClick="this.select()" >
+                                </div>
+                                <div class="input-wrap"><i class="fas fa-key" aria-hidden="true"></i>
+                                    <input name="password" type="text" id="email" onClick="this.select()" placeholder="Password" >
+                                </div>
+                               <div class="input-wrap"><i class="fas fa-key" aria-hidden="true"></i>
+                                    <input name="password" type="text" id="email" onClick="this.select()" placeholder="Confirm Password" >
+                                </div>
+
+                                <button style="padding:20px 40px!important;" type="submit" id="submit" class="contact_form-btn"><span style="font-size: 27px; font-weight: 900; letter-spacing: 1.5px;">SUBMIT </span><span style="font-size: 23px;" class="fas fa-arrow-right"></span></button> 
+
+                            </form> -->
+                            <br><br>
+                            <p style="float: none; text-align: center;">Already have an account? <a style="text-decoration: underline; color: blue;" href="{% url 'account_login' %}">Login Here</a></p>
+                        </div>
+                        </center>
+                    </div>
+                </div>
+                </div>
+
+                </div>
+            </div>
+            <div class="parallax-title right-pos" data-scrollax="properties: { translateY: '-350px' }">  Sign up</div>
+        </section>
+        <!-- section end -->
+        <!--  to top  -->  
+        <div class="small-sec fl-wrap">
+            <div class="to-top-wrap"><a class="to-top" href="#"> <i class="fa fa-angle-double-up"></i> Back to Top</a></div>
+        </div>
+        <!-- to top end--> 
+    </div>
+    <!-- content end -->
+</div>
+<!-- column-wrap end -->
+
+{% endblock content_register-view %}
+
+
+

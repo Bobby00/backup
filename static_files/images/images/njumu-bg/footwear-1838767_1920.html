@@ -1,0 +1,25 @@
+<script src='https://www.google.com/recaptcha/api.js?onload=recaptchaOnLoad&render=explicit'></script>
+<h6>Download</h6>
+<div>
+    <p>
+        
+            As a registered user, no captcha is presented to you.
+            <a href="/accounts/register/">Sign up, it's free!</a>
+        
+    </p>
+    <form action="/images/download/footwear-1838767_1920.jpg?attachment&modal" method="post" class="pure-form ajax_form" data-target="#cboxLoadedContent">
+        <div>
+            <input type="hidden" name="attachment" value="1">
+            <div id="download-recaptcha"></div>
+            <div style="margin:15px 0 0"><input class="pure-button button-green" type="submit" value="Download"></div>
+        </div>
+    </form>
+</div>
+<script>
+    function recaptchaOnLoad() {
+        grecaptcha.render('download-recaptcha', { 'sitekey' : '6Lc7IjUUAAAAAE_5VoWduKgJx5VmhJP3jZxVW6lV' });
+        resized();
+      };
+      setTimeout(function(){ resized(); }, 500);
+      setTimeout(function(){ resized(); }, 2000);
+</script>
