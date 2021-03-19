@@ -70,7 +70,7 @@ django-templated-email==2.3.0
 django-timezone-field==2.1
 django-versatileimagefield==1.10
 django-webpack-loader==0.6.0
-djangorestframework==3.5.4
+djangorestframework==3.11.2
 djangorestframework-jwt==1.11.0
 docutils==0.14
 easy-thumbnails==2.6
