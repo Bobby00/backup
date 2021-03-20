@@ -98,7 +98,7 @@ idna==2.8
 ipaddress==1.0.22
 itypes==1.1.0
 jdcal==1.4
-Jinja2==2.8.1
+Jinja2==2.11.3
 jmespath==0.9.4
 jsonfield==2.0.2
 keyring==10.6.0
