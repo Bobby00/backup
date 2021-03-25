@@ -155,7 +155,7 @@ python-debian==0.1.32
 python3-openid==3.1.0
 pytz==2018.9
 pyxdg==0.25
-PyYAML==3.12
+PyYAML==5.4
 raven==6.9.0
 razorpay==1.2.0
 redis==2.10.6
