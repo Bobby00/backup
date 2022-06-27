@@ -159,7 +159,7 @@ PyYAML==3.12
 raven==6.9.0
 razorpay==1.2.0
 redis==2.10.6
-reportlab==3.4.0
+reportlab==3.5.55
 requests==2.21.0
 requests-oauthlib==1.2.0
 requests-unixsocket==0.1.5
